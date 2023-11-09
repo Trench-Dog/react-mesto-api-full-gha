@@ -1,0 +1,12 @@
+.popup__close-button_type_close-image {
+    position: absolute;
+    left: 101.2%;
+    bottom: 101.1%;
+}
+
+@media screen and (max-width: 600px) {
+    .popup__close-button_type_close-image {
+        left: 91.5%;
+        bottom: 106.5%;
+    }
+}
