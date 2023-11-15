@@ -5,20 +5,22 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 export default function Main(props) {
     const currentUser = useContext(CurrentUserContext);
+    console.log(currentUser);
+    console.log(currentUser.user)
     return (
         <main className="content">
             <section className="profile">
                 <div className="profile__avatar-container" onClick={props.onEditAvatar}>
                     <img
                         className="profile__avatar"
-                        src={currentUser.avatar}
+                        src={currentUser.user.avatar}
                         alt="Аватар пользователя"
                     />
                     <img className="profile__avatar-editor" src={avatar_editor} />
                 </div>
                 <div className="profile__info">
-                    <h1 className="profile__name">{currentUser.name}</h1>
-                    <p className="profile__description">{currentUser.about}</p>
+                    <h1 className="profile__name">{currentUser.user.name}</h1>
+                    <p className="profile__description">{currentUser.user.about}</p>
                     <button
                         className="profile__edit-button"
                         type="button"

@@ -185,7 +185,8 @@ export default function App() {
         authApi
             .register(password, email)
             .then(res => {
-                if (res.data) {
+                console.log(res.data);
+                if (res) {
                     setIsSuccess(true);
                 }
                 setStatusPopupOpen(true);
