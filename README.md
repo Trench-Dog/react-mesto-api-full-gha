@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP 51.250.8.234
+IP 158.160.117.110
 
 Frontend https://trenchdog.nomoredomainsmonster.ru
 
