@@ -51,7 +51,7 @@ module.exports.getAllUsers = (req, res, next) => {
 module.exports.getMyInfo = (req, res, next) => {
   User.findById(req.user._id)
     .then((user) => {
-      if (user) res.send({ user });
+      if (user) res.send(user);
       else throw new NotFoundError('Запрашиваемый пользователь не найден');
     })
     .catch((err) => {

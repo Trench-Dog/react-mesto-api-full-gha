@@ -29,7 +29,13 @@ export default function App() {
         link: '',
         name: ''
     });
-    const [currentUser, setCurrentUser] = useState({});
+    const [currentUser, setCurrentUser] = useState({
+        _id: '',
+        email: '',
+        name: '',
+        about: '',
+        avatar: ''
+      });
     const [cards, setCards] = useState([]);
     const [deletedCardId, setDeletedCardId] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -185,7 +191,6 @@ export default function App() {
         authApi
             .register(password, email)
             .then(res => {
-                console.log(res.data);
                 if (res) {
                     setIsSuccess(true);
                 }
@@ -232,7 +237,7 @@ export default function App() {
         if (jwt) {
             authApi.checkToken(jwt).then(res => {
                 if (res) {
-                    setEmail(res.data.email);
+                    setEmail(res.email);
                     setIsLoggedIn(true);
                     navigate('/');
                 }
